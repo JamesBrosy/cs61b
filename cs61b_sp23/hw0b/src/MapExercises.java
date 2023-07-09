@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -31,18 +30,11 @@ public class MapExercises {
     /** Returns a map of the counts of all words that appear in a list of words. */
     public static Map<String, Integer> countWords(List<String> words) {
         Map<String, Integer> result = new TreeMap<>();
-        ArrayList<String> listTmp = new ArrayList<>(words);
-        String keyTmp = listTmp.get(0);
-        result.put(keyTmp, 1);
-        listTmp.remove(keyTmp);
-        while (!listTmp.isEmpty()) {
-            if (keyTmp.equals(listTmp.get(0))) {
-                result.put(keyTmp, result.get(keyTmp) + 1);
-                listTmp.remove(keyTmp);
+        for (String str : words) {
+            if (!result.containsKey(str)) {
+                result.put(str, 1);
             } else {
-                keyTmp = listTmp.get(0);
-                result.put(keyTmp, 1);
-                listTmp.remove(keyTmp);
+                result.put(str, result.get(str) + 1);
             }
         }
         return result;
