@@ -1,0 +1,12 @@
+[submodule "library-sp23"]
+	path = library-sp23
+	url = https://github.com/Berkeley-CS61B/library-sp23.git
+[submodule "lectureCode-sp18"]
+	path = lectureCode-sp18
+	url = https://github.com/Berkeley-CS61B/lectureCode-sp18.git
+[submodule "lectureCode-sp23"]
+	path = lectureCode-sp23
+	url = https://github.com/Berkeley-CS61B/lectureCode-sp23.git
+[submodule "library-sp18"]
+	path = library-sp18
+	url = https://github.com/Berkeley-CS61B/library-sp18.git
