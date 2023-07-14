@@ -49,7 +49,7 @@ public class NaiveLetterFreqGuesser implements Guesser {
                 continue;
             }
             if (freqMap.get(item) > freqMap.get(bestGuess)) {
-                    bestGuess = item;
+                bestGuess = item;
             }
         }
         return bestGuess;
