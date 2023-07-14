@@ -1,6 +1,6 @@
 # About
 
-This repo is my solutions of cs61b_sp18 and cs61b_sp23.
+This repo is my solutions of cs61b-sp18 and cs61b-sp23.
 
 > **Declaration**
 > 
@@ -9,7 +9,7 @@ This repo is my solutions of cs61b_sp18 and cs61b_sp23.
 > forbidding posting code from the course publicly. My aim is to save my learning outcomes and provide
 > some help for other undergraduates not from Berkeley who are learning cs61b.
 
-## Getting Start
+## Getting Started
 
 You can run following commands to clone my repo with submodules:
 ```
