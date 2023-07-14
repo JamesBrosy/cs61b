@@ -1,8 +1,9 @@
 package aoa.guessers;
 
+import aoa.helpers.HelperUtils;
 import aoa.utils.FileUtils;
+
 import java.util.List;
-import java.util.Map;
 
 public class PAGALetterFreqGuesser implements Guesser {
     private final List<String> words;
@@ -15,8 +16,8 @@ public class PAGALetterFreqGuesser implements Guesser {
     /** Returns the most common letter in the set of valid words based on the current
      *  PATTERN and the GUESSES that have been made. */
     public char getGuess(String pattern, List<Character> guesses) {
-        // TODO: Fill in this method.
-        return '?';
+        String regex = HelperUtils.generateRegex(pattern, guesses);
+        return HelperUtils.getGuess(regex, words, guesses);
     }
 
     public static void main(String[] args) {
