@@ -1,6 +1,8 @@
 package aoa.helpers;
 
 
+import org.antlr.v4.runtime.misc.Pair;
+
 import java.util.*;
 
 public class HelperUtils {
@@ -58,4 +60,32 @@ public class HelperUtils {
         return bestGuess;
     }
 
+    /** time complexity is O(wordLength)*/
+    public static Pair<String, String> generatePatternToWordPair(String word, char letter, String oldPattern) {
+        StringBuilder newPattern = new StringBuilder(oldPattern);
+        for (int i = 0; i < word.length(); i++) {
+            if (letter == word.charAt(i)) {
+                newPattern.replace(i, i + 1, Character.toString(letter));
+            }
+        }
+        return new Pair<>(newPattern.toString(), word);
+    }
+
+    /** time complexity is O(wordPool.size())*/
+    public static Map<String, List<String>> generatePatternToWordsMap(
+            List<String> wordPool,
+            char letter,
+            String oldPattern
+    ) {
+        Map<String, List<String>> patternToWordsMap = new TreeMap<>();
+        for (String item : wordPool) {
+            Pair<String, String> patternToWordPair = generatePatternToWordPair(item, letter, oldPattern);
+            if (!patternToWordsMap.containsKey(patternToWordPair.a)) {
+                patternToWordsMap.put(patternToWordPair.a, new ArrayList<>(List.of(patternToWordPair.b)));
+                continue;
+            }
+            patternToWordsMap.get(patternToWordPair.a).add(patternToWordPair.b);
+        }
+        return patternToWordsMap;
+    }
 }
