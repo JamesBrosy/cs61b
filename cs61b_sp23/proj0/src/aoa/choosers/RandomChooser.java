@@ -32,10 +32,9 @@ public class RandomChooser implements Chooser {
         StringBuilder tmpPattern = new StringBuilder(pattern);
         int sum = 0;
         for (int i = 0; i < chosenWord.length(); i++) {
-            char ch = chosenWord.charAt(i);
-            if (letter == ch) {
+            if (letter == chosenWord.charAt(i)) {
                 sum++;
-                tmpPattern.replace(i, i + 1, Character.toString(ch));
+                tmpPattern.replace(i, i + 1, Character.toString(letter));
             }
         }
         pattern = tmpPattern.toString();
