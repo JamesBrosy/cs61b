@@ -33,13 +33,13 @@ public class ChooserHelper {
     ) {
         Map<String, Pair<ArrayList<String>, Integer>> patternToPairMap = new TreeMap<>();
         for (String item : wordPool) {
-            var IntToPair = generateIntToPair(item, letter, oldPattern);
-            if (!patternToPairMap.containsKey(IntToPair.b.a)) {
-                var value = new Pair<>(new ArrayList<>(List.of(IntToPair.b.b)), IntToPair.a);
-                patternToPairMap.put(IntToPair.b.a, value);
+            var intToPair = generateIntToPair(item, letter, oldPattern);
+            if (!patternToPairMap.containsKey(intToPair.b.a)) {
+                var value = new Pair<>(new ArrayList<>(List.of(intToPair.b.b)), intToPair.a);
+                patternToPairMap.put(intToPair.b.a, value);
                 continue;
             }
-            patternToPairMap.get(IntToPair.b.a).a.add(IntToPair.b.b);
+            patternToPairMap.get(intToPair.b.a).a.add(intToPair.b.b);
         }
         return patternToPairMap;
     }
