@@ -2,7 +2,7 @@ package aoa.choosers;
 
 import java.util.*;
 
-import aoa.helpers.HelperUtils;
+import com.github.javaparser.utils.Pair;
 import edu.princeton.cs.algs4.StdRandom;
 import aoa.utils.FileUtils;
 
@@ -26,23 +26,17 @@ public class EvilChooser implements Chooser {
 
     @Override
     public int makeGuess(char letter) {
-        Map<String, List<String>> patternToWordsMap = HelperUtils.generatePatternToWordsMap(wordPool, letter, pattern);
-        patternToWordsMap.put("?", List.of());
+        var patternToPairMap = ChooserHelper.generatePatternToPairMap(wordPool, letter, pattern);
+        patternToPairMap.put("?", new Pair<>(new ArrayList<>(), 0));
         pattern = "?";
-        for (String item : patternToWordsMap.keySet()) {
-            if (patternToWordsMap.get(item).size() > patternToWordsMap.get(pattern).size()) {
+        for (String item : patternToPairMap.keySet()) {
+            if (patternToPairMap.get(item).a.size() > patternToPairMap.get(pattern).a.size()) {
                 pattern = item;
             }
         }
-        wordPool = patternToWordsMap.get(pattern);
+        wordPool = patternToPairMap.get(pattern).a;
 
-        int sum = 0;
-        for (int i = 0; i < pattern.length(); i++) {
-            if (letter == pattern.charAt(i)) {
-                sum++;
-            }
-        }
-        return sum;
+        return patternToPairMap.get(pattern).b;
     }
 
     @Override

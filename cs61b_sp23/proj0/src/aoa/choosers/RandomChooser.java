@@ -18,8 +18,7 @@ public class RandomChooser implements Chooser {
         if (words.isEmpty()) {
             throw new IllegalStateException("No words found of wordsLength");
         }
-        int numWords = words.size();
-        int randomLyChosenWordNumber = StdRandom.uniform(numWords);
+        int randomLyChosenWordNumber = StdRandom.uniform(words.size());
         chosenWord = words.get(randomLyChosenWordNumber);
 
         char[] tmp = new char[wordLength];
@@ -29,16 +28,9 @@ public class RandomChooser implements Chooser {
 
     @Override
     public int makeGuess(char letter) {
-        StringBuilder tmpPattern = new StringBuilder(pattern);
-        int sum = 0;
-        for (int i = 0; i < chosenWord.length(); i++) {
-            if (letter == chosenWord.charAt(i)) {
-                sum++;
-                tmpPattern.replace(i, i + 1, Character.toString(letter));
-            }
-        }
-        pattern = tmpPattern.toString();
-        return sum;
+        var intToPair = ChooserHelper.generateIntToPair(chosenWord, letter, pattern);
+        pattern = intToPair.b.a;
+        return intToPair.a;
     }
 
     @Override

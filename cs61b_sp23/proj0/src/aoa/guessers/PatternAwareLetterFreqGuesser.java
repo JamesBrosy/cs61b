@@ -1,9 +1,9 @@
 package aoa.guessers;
 
-import aoa.helpers.HelperUtils;
 import aoa.utils.FileUtils;
 
 import java.util.List;
+import java.util.Map;
 
 public class PatternAwareLetterFreqGuesser implements Guesser {
     private final List<String> words;
@@ -13,11 +13,12 @@ public class PatternAwareLetterFreqGuesser implements Guesser {
     }
 
     @Override
-    /** Returns the most common letter in the set of valid words based on the current
-     *  PATTERN. */
+    /* Returns the most common letter in the set of valid words based on the current
+       PATTERN. */
     public char getGuess(String pattern, List<Character> guesses) {
         String regex = pattern.replace('-', '.');
-        return HelperUtils.getGuess(regex, words, guesses);
+        Map<Character, Integer> freqMap = GuesserHelper.getFrequencyMap(GuesserHelper.getMatchedWords(regex, words));
+        return GuesserHelper.getGuess(freqMap, guesses);
     }
 
     public static void main(String[] args) {
