@@ -19,9 +19,7 @@ public class EvilChooser implements Chooser {
             throw new IllegalStateException("No words found of wordsLength");
         }
 
-        char[] tmp = new char[wordLength];
-        Arrays.fill(tmp, '-');
-        pattern = new String(tmp);
+        pattern = "-".repeat(wordLength);
     }
 
     @Override

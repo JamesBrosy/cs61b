@@ -3,7 +3,6 @@ package aoa.choosers;
 import edu.princeton.cs.algs4.StdRandom;
 import aoa.utils.FileUtils;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class RandomChooser implements Chooser {
@@ -21,9 +20,7 @@ public class RandomChooser implements Chooser {
         int randomLyChosenWordNumber = StdRandom.uniform(words.size());
         chosenWord = words.get(randomLyChosenWordNumber);
 
-        char[] tmp = new char[wordLength];
-        Arrays.fill(tmp, '-');
-        pattern = new String(tmp);
+        pattern = "-".repeat(wordLength);
     }
 
     @Override
