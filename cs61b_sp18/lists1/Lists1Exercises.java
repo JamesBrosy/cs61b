@@ -3,15 +3,25 @@ public class Lists1Exercises {
       * each element incremented by x. L is not allowed
       * to change. */
     public static IntList incrList(IntList L, int x) {
-        /* Your code here. */
-        return L;        
+        IntList res = new IntList(L.first + x, null);
+        IntList ptr = res;
+        while (L.rest != null) {
+            ptr.rest = new IntList(L.rest.first + x, null);
+            ptr = ptr.rest;
+            L = L.rest;
+        }
+        return res;
     }
 
     /** Returns an IntList identical to L, but with
       * each element incremented by x. Not allowed to use
       * the 'new' keyword. */
     public static IntList dincrList(IntList L, int x) {
-        /* Your code here. */
+        IntList ptr = L;
+        while (ptr != null) {
+            ptr.first += x;
+            ptr = ptr.rest;
+        }
         return L;
     }
 
