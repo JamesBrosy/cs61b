@@ -1,6 +1,6 @@
 public class LinkedListDeque<T> {
 
-    private Node sentinel;
+    private final Node sentinel;
 
     private int size;
 
