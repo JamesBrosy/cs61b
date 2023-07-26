@@ -115,6 +115,8 @@ public class LinkedListDeque<T> {
         }
         return tmp.data;
     }
+
+    /** Same as get, but uses recursion */
     public T getRecursive(int index) {
         if (index < 0 || index >= size) {
             return null;
@@ -122,6 +124,7 @@ public class LinkedListDeque<T> {
         return get(index, sentinel.next);
     }
 
+    /** Private helper method for {@link #getRecursive} */
     private T get(int index, Node first) {
         if (index == 0) {
             return first.data;
