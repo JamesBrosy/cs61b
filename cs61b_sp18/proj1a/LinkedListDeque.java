@@ -35,12 +35,12 @@ public class LinkedListDeque<T> {
         sentinel =  new Node();
         Node tmp = sentinel;
         Node first = other.sentinel.next;
-        while (first != null) {
+        while (first != other.sentinel) {
             tmp.next = new Node(first.data, tmp, sentinel);
-            sentinel.prev = tmp.next;
             tmp = tmp.next;
             first = first.next;
         }
+        sentinel.prev = tmp;
         size = other.size;
     }
 
