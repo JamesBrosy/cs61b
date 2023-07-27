@@ -1,5 +1,5 @@
 public class Planet {
-    public static final double gravConst = 6.67e-11;
+    private static final double GRAV_CONST = 6.67e-11;
     public double xxPos;
     public double yyPos;
     public double xxVel;
@@ -34,7 +34,7 @@ public class Planet {
 
     public double calcForceExertedBy(Planet p) {
         double distance = calcDistance(p);
-        return gravConst * this.mass * p.mass / (distance * distance);
+        return GRAV_CONST * this.mass * p.mass / (distance * distance);
     }
 
     public double calcForceExertedByX(Planet p) {
