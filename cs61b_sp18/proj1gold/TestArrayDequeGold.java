@@ -20,29 +20,34 @@ public class TestArrayDequeGold {
         String msg = "";
 
         for (int i = 0; i < loopTimes; i++) {
-            // generate random double between 0 and 1 used to select method;
-            double numberBetweenZeroAndOne = StdRandom.uniform();
+            // generate random integer between 0 and 4 used to select method;
+            int randomNumber = StdRandom.uniform(4);
 
-            if (numberBetweenZeroAndOne < 0.25) {
-                // test addFirst method
-                sad.addFirst(i);
-                ads.addFirst(i);
-                msg += "addFirst(" + i + ")\n";
-                assertEquals(msg, ads.get(0), sad.get(0));
-            } else if (numberBetweenZeroAndOne < 0.5) {
-                // test addLast method
-                sad.addLast(i);
-                ads.addLast(i);
-                msg += "addLast(" + i + ")\n";
-                assertEquals(msg, ads.get(ads.size() - 1), sad.get(sad.size() - 1));
-            } else if (numberBetweenZeroAndOne < 0.75) {
-                // test removeFirst method
-                msg += "removeFirst()\n";
-                assertEquals(msg, ads.removeFirst(), sad.removeFirst());
-            } else {
-                // test removeLast method
-                msg += "removeLast()\n";
-                assertEquals(msg, ads.removeLast(), sad.removeLast());
+            switch (randomNumber) {
+                case 0:
+                    // test addFirst method
+                    sad.addFirst(i);
+                    ads.addFirst(i);
+                    msg += "addFirst(" + i + ")\n";
+                    assertEquals(msg, ads.get(0), sad.get(0));
+                    break;
+                case 1:
+                    // test addLast method
+                    sad.addLast(i);
+                    ads.addLast(i);
+                    msg += "addLast(" + i + ")\n";
+                    assertEquals(msg, ads.get(ads.size() - 1), sad.get(sad.size() - 1));
+                    break;
+                case 2:
+                    // test removeFirst method
+                    msg += "removeFirst()\n";
+                    assertEquals(msg, ads.removeFirst(), sad.removeFirst());
+                    break;
+                case 3:
+                    // test removeLast method
+                    msg += "removeLast()\n";
+                    assertEquals(msg, ads.removeLast(), sad.removeLast());
+                    break;
             }
         }
     }
