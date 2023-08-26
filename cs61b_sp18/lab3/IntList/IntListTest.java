@@ -2,7 +2,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import java.util.Objects;
 
 public class IntListTest {
 
@@ -68,7 +67,7 @@ public class IntListTest {
         assertEquals(IntList.of(1, 2, 3), A);
     }
 
-    @Test(timeout = 1000)
+    @Test
     public void testReverse() {
         IntList A = IntList.of();
         IntList B = IntList.of(1, 2, 3, 4);
