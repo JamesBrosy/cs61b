@@ -1,4 +1,3 @@
-import jdk.jfr.Description;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,7 +17,6 @@ public class TestPalindrome {
     } // Uncomment this class once you've created your Palindrome class. */
 
     @Test
-    @Description("test method isPalindrome(String word)")
     public void testIsPalindrome() {
         assertFalse(palindrome.isPalindrome("cat"));
         assertTrue(palindrome.isPalindrome("abcdcba"));
@@ -28,7 +26,6 @@ public class TestPalindrome {
     }
 
     @Test
-    @Description("test method isPalindrome(String word, CharacterComparator cc)")
     public void testIsPalindrome2() {
         CharacterComparator cc = new OffByOne();
         assertFalse(palindrome.isPalindrome("abc", cc));
