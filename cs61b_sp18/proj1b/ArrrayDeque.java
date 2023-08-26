@@ -11,7 +11,7 @@ public class ArrrayDeque<T> implements Deque<T> {
     private int front;
     private int end;
 
-    /** pointer to an element in array adds {@code num? */
+    /** pointer to an element in array adds {@code num} */
     private int add(int num, int ptr) {
         return ptr + num >= items.length ? ptr + num - items.length : ptr + num;
     }
