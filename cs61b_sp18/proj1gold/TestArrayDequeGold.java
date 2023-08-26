@@ -16,6 +16,9 @@ public class TestArrayDequeGold {
         // times of for loop
         int loopTimes = 1000;
 
+        // output messages
+        String msg = "";
+
         for (int i = 0; i < loopTimes; i++) {
             // generate random double between 0 and 1 used to select method;
             double numberBetweenZeroAndOne = StdRandom.uniform();
@@ -24,22 +27,22 @@ public class TestArrayDequeGold {
                 // test addFirst method
                 sad.addFirst(i);
                 ads.addFirst(i);
-                assertEquals("addFirst(" + i + ")\n",
-                        ads.get(0), sad.get(0));
+                msg += "addFirst(" + i + ")\n";
+                assertEquals(msg, ads.get(0), sad.get(0));
             } else if (numberBetweenZeroAndOne < 0.5) {
                 // test addLast method
                 sad.addLast(i);
                 ads.addLast(i);
-                assertEquals("addLast(" + i + ")\n",
-                        ads.get(ads.size() - 1), sad.get(sad.size() - 1));
+                msg += "addLast(" + i + ")\n";
+                assertEquals(msg, ads.get(ads.size() - 1), sad.get(sad.size() - 1));
             } else if (numberBetweenZeroAndOne < 0.75) {
                 // test removeFirst method
-                assertEquals("removeFirst()",
-                        ads.removeFirst(), sad.removeFirst());
+                msg += "removeFirst()\n";
+                assertEquals(msg, ads.removeFirst(), sad.removeFirst());
             } else {
                 // test removeLast method
-                assertEquals("removeLast()",
-                        ads.removeLast(), sad.removeLast());
+                msg += "removeLast()\n";
+                assertEquals(msg, ads.removeLast(), sad.removeLast());
             }
         }
     }
