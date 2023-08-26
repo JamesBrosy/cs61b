@@ -1,6 +1,6 @@
-public class OffByOne implements CharacterComparator{
+public class OffByOne implements CharacterComparator {
     @Override
     public boolean equalChars(char x, char y) {
-        return false;
+        return (x > y ? x - y : y - x) == 1;
     }
 }

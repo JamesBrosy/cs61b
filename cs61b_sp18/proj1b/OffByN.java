@@ -1,4 +1,4 @@
-public class OffByN implements CharacterComparator{
+public class OffByN implements CharacterComparator {
 
     int num;
 
@@ -8,6 +8,6 @@ public class OffByN implements CharacterComparator{
 
     @Override
     public boolean equalChars(char x, char y) {
-        return false;
+        return (x > y ? x - y : y - x) == num;
     }
 }
