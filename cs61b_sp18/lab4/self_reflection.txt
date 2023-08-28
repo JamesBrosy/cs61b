@@ -8,7 +8,8 @@ A:
 
 Q: What's something you felt proud of in your code, if anything?
 
-A:
+A: I used the skills that professor Josh said in classes, such as Using private helper methods, fixing
+   my problems by debugger etc.
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
@@ -16,15 +17,21 @@ A:
 
 Q: What did you learn by talking to your partner about writing ArrayDeque?
 
-A:
+A: 1. I have learnt how to resize and shrink an array which is seemed that the size can not be changed.
+   2. I have learnt the beginning and the end of the Array we build can not be default, and
+   They are just relative.
+   3. I have learnt the advantages of classes, like encapsulation etc.
+
 
 Q: What do you wish you would have known before writing ArrayDeque, if anything?
 
-A:
+A: When trying to finish the methods addFirst and removeFirst, I do not know how to start
+   at the beginning, because In my mind, the beginning of the ArrayDeque should be the first
+   item of the array. So that's what I wish to know before writing ArrayDeque
 
 Q: If you wrote ArrayDeque again, what would you do differently, if anything?
 
-A:
+A: I want to do some optimization of the access control and code styles.
 
 -----
 
@@ -36,7 +43,8 @@ A:
 
 Q: What's something you felt proud of in your code, if anything?
 
-A:
+A: I used the skills that professor Josh said in classes, such as Using private helper methods, fixing
+   my problems by debugger etc.
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
