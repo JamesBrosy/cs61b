@@ -59,9 +59,17 @@ public class Experiments {
         List<Double> times = new ArrayList<>();
         List<Integer> opCounts = new ArrayList<>();
 
-        // TODO: YOUR CODE HERE
-
-        return null;
+        for (int N = 1000; N <= 128000; N <<= 1) {
+            Ns.add(N);
+            opCounts.add(N);
+            Stopwatch sw = new Stopwatch();
+            AList<Integer> al = new AList<>();
+            for (int j = 0; j < N; j++) {
+                al.addLast(N);
+            }
+            times.add(sw.elapsedTime());
+        }
+        return new TimingData(Ns, times, opCounts);
     }
 
 
@@ -70,9 +78,22 @@ public class Experiments {
         List<Double> times = new ArrayList<>();
         List<Integer> opCounts = new ArrayList<>();
 
-        // TODO: YOUR CODE HERE
+        int ops = 1000;
 
-        return null;
+        for (int N = 1000; N <= 128000; N <<= 1) {
+            Ns.add(N);
+            opCounts.add(ops);
+            SLList<Integer> sl = new SLList<>();
+            for (int i = 0; i < N; i++) {
+                sl.addLast(100);
+            }
+            Stopwatch sw = new Stopwatch();
+            for (int j = 0; j < ops; j++) {
+                int lst = sl.getLast();
+            }
+            times.add(sw.elapsedTime());
+        }
+        return new TimingData(Ns, times, opCounts);
 
     }
 
@@ -81,7 +102,9 @@ public class Experiments {
         TimingData td = exampleFibonacciExperiment();
         // Modify this line to make the chart title make sense
         String title = "Naive Recursive Fibonacci";
-
+        // String title = "AList with Naive Resizing Strategy";
+        // String title = "AList with multiplicative Resizing Strategy(x1.01)";
+        // String title = "SLList GetLast";
         // Convert "times" (in seconds) and "opCounts" to nanoseconds / op
         List<Double> timesUsPerOp = new ArrayList<>();
         for (int i = 0; i < td.getTimes().size(); i++) {
