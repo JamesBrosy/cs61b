@@ -48,7 +48,7 @@ public class AdventureGame {
 
     private AdventureStage parseResponse(String response) {
         // If empty then prompt again
-        if (response == null || response.isEmpty()) {
+        if (response.isEmpty()) {
             return null;
         }
 
