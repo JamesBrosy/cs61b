@@ -19,13 +19,13 @@ public class MemoryGameSolution {
                                                    "Too easy for you!", "Wow, so impressive!"};
 
     public static void main(String[] args) {
-        if (args.length < 1) {
-            System.out.println("Please enter a seed");
-            return;
-        }
-
-        long seed = Long.parseLong(args[0]);
-        MemoryGameSolution game = new MemoryGameSolution(40, 40, seed);
+//        if (args.length < 1) {
+//            System.out.println("Please enter a seed");
+//            return;
+//        }
+//
+//        long seed = Long.parseLong(args[0]);
+        MemoryGameSolution game = new MemoryGameSolution(40, 40, 123456);
         game.startGame();
     }
 
