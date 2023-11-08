@@ -13,7 +13,6 @@ import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
 
 public class InteractivePercolationVisualizer {
-    /*
     private static final int DELAY = 20;
 
     public static void main(String[] args) {
@@ -59,5 +58,4 @@ public class InteractivePercolationVisualizer {
             PercolationVisualizer.show(DELAY);
         }
     }
-    */
 }
