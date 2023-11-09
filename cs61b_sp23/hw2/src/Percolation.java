@@ -13,7 +13,7 @@ public class Percolation {
 
     public Percolation(int N) {
         if (N <= 0) {
-            throw new IllegalArgumentException("N is less than 0");
+            throw new IllegalArgumentException("N isn't greater than 0");
         }
         width = N;
         isOpenArr = new boolean[N][N];
@@ -52,14 +52,14 @@ public class Percolation {
 
     public boolean isOpen(int row, int col) {
         if (isInvalid(row, col)) {
-            throw new IllegalArgumentException("row or column is out of bounds.");
+            throw new IndexOutOfBoundsException("row or column is out of bounds.");
         }
         return isOpenArr[row][col];
     }
 
     public boolean isFull(int row, int col) {
         if (isInvalid(row, col)) {
-            throw new IllegalArgumentException("row or column is out of bounds.");
+            throw new IndexOutOfBoundsException("row or column is out of bounds.");
         }
         return isOpen(row, col) && wquUF.connected(0, coordsToInt(row, col));
     }
