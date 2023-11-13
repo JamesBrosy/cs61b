@@ -32,15 +32,11 @@ public class NGramMap {
         String word;
         int year;
         double num;
-        while (in.hasNextLine()) {
-            try {
-                word = in.readString();
-                year = in.readInt();
-                num  = in.readInt();
-                in.readInt();
-            } catch (NoSuchElementException e) {
-                continue;
-            }
+        while (!in.isEmpty()) {
+            word = in.readString();
+            year = in.readInt();
+            num = in.readInt();
+            in.readInt();
             if (wordsHistoryMap.containsKey(word)) {
                 wordsHistoryMap.get(word).put(year, num);
                 continue;
